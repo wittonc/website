@@ -1,7 +1,5 @@
 ---
 title: ft_setopt
-layout: default
-tags: 
 ---
 ```
  FT_SETOPT assigns a value to an configuration structure or to a cell-array
@@ -10,7 +8,7 @@ tags:
 
  Use as
    s = ft_setopt(s, key, val)
- where s is a structure or a cell array.
+ where s is a structure or a cell-array.
 
  See also FT_GETOPT, FT_CHECKOPT
 ```

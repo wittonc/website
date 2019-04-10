@@ -1,7 +1,5 @@
 ---
 title: ft_topoplotTFR
-layout: default
-tags: 
 ---
 ```
  FT_TOPOPLOTTFR plots the topographic distribution over the head
@@ -65,7 +63,7 @@ tags:
                             'auto': date, xparam, yparam and parameter limits are printed
                             'xlim': only xparam limits are printed
                             'ylim': only yparam limits are printed
-   cfg.commentpos         = string or two numbers, position of comment (default 'leftbottom')
+   cfg.commentpos         = string or two numbers, position of the comment (default = 'leftbottom')
                             'lefttop' 'leftbottom' 'middletop' 'middlebottom' 'righttop' 'rightbottom'
                             'title' to place comment as title
                             'layout' to place comment as specified for COMNT in layout
@@ -120,7 +118,7 @@ tags:
  If you specify this option the input data will be read from a *.mat
  file on disk. This mat files should contain only a single variable named 'data',
  corresponding to the input structure. For this particular function, the input should be
- structured as a cell array.
+ structured as a cell-array.
 
  See also FT_TOPOPLOTER, FT_TOPOPLOTIC, FT_SINGLEPLOTTFR, FT_MULTIPLOTTFR, FT_PREPARE_LAYOUT
 ```

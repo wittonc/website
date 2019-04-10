@@ -1,7 +1,5 @@
 ---
 title: ft_mvaranalysis
-layout: default
-tags: 
 ---
 ```
  FT_MVARANALYSIS performs multivariate autoregressive modeling on
@@ -31,7 +29,7 @@ tags:
                      is fitted. (Do NOT specify if cfg.channelcmb is
                      defined)
    cfg.channelcmb = specify channel combinations as a
-                     two-column cell array with channels in each column between
+                     two-column cell-array with channels in each column between
                      which a bivariate model will be fit (overrides
                      cfg.channel)
    cfg.keeptrials = 'no' (default) or 'yes' specifies whether the coefficients

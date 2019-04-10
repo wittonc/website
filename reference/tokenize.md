@@ -1,10 +1,8 @@
 ---
 title: tokenize
-layout: default
-tags: 
 ---
 ```
- TOKENIZE cuts a string into pieces, returning the pieces in a cell array
+ TOKENIZE cuts a string into pieces, returning the pieces in a cell-array
 
  Use as
    t = tokenize(str)

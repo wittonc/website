@@ -7,9 +7,9 @@ tags: [example, meg, timelock, source, dipole, fixme, meg-tactile]
 
 ## Description
 
-The Matlab script is given first; the figures that this script produces are at the bottom of this page.
+The MATLAB script is given first; the figures that this script produces are at the bottom of this page.
 
-The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/TactileStimulusDipolefit.zip) is available from our FTP server.
+The MEG dataset [SubjectBraille.zip](ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/SubjectBraille.zip) is available from our FTP server.
 
 ## MATLAB script
 
@@ -24,13 +24,13 @@ The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pu
     % data. Because stimuli were too difficult there was absolutely no task.
     %
     % The MEG dataset is available from
-    %   ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/TactileStimulusDipolefit.zip
+    %   ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/SubjectBraille.zip
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % determine interesting segments in the data
 
     cfg                     = [];
-    cfg.dataset             = 'MarkusBraille.ds';
+    cfg.dataset             = 'SubjectBraille.ds';
     cfg.continuous          = 'yes';
     cfg.trialdef.eventtype  = 'backpanel trigger';
     cfg.trialdef.eventvalue = [4,8];
@@ -78,7 +78,7 @@ The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pu
     %
     % after detecting the segments of data contaminated by artifacts, those
     % segments subsequently are removed and the clean data segments of interest
-    % can finally be imported into Matlab using the ft_preprocessing function.
+    % can finally be imported into MATLAB using the ft_preprocessing function.
     cfg.artfctdef.minaccepttim    = 0.2;
     cfg.artfctdef.reject          = 'partial';
     cfg.artfctdef.feedback        = 'yes';
@@ -96,7 +96,7 @@ The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pu
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % make a butterfly plot of the ERF
-    % using the plain Matlab plotting function
+    % using the plain MATLAB plotting function
     figure
     plot(1000*avg.time, avg.avg)  % convert time to ms
     xlabel('time (ms)')
@@ -121,7 +121,7 @@ The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pu
     cfg = [];
     cfg.latency = [0.045 0.055];  % specify latency window around M50 peak
     cfg.numdipoles = 1;
-    cfg.hdmfile = 'bauer_m.hdm';
+    cfg.hdmfile = 'SubjectBraille.hdm';
     cfg.feedback = 'textbar';
     cfg.grid.resolution = 2;
     cfg.grid.unit = 'cm';
@@ -132,7 +132,7 @@ The MEG dataset [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pu
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % make a plot of the location of the dipoles
     % read the anatomical MRI
-    mri = ft_read_mri('bauer_m.mri');
+    mri = ft_read_mri('SubjectBraille.mri');
 
     % the source is expressed in cm, the MRI is expressed in mm
     cfg = [];

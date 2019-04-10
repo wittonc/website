@@ -1,10 +1,8 @@
 ---
 title: markdown2matlab
-layout: default
-tags: 
 ---
 ```
- MARKDOWN2MATLAB converts a MarkDown file to a MATLAB script or function. All text
+ MARKDOWN2MATLAB converts a Markdown file to a MATLAB script or function. All text
  is converted to comments, headings are converted to comment lines starting with %%
  sections with code are properly formatted, and words that appear in bold, italic or
  monospace are converted.

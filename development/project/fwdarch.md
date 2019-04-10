@@ -34,7 +34,7 @@ All the routines which create a forward model need a description of the volume c
 
 {% include image src="/assets/img/development/project/fwdarch/wikie_scheme2.jpg" width="600" %})
 
-The leftmost box indicates a set of functions (Matlab/external toolboxes, FieldTrip) that deal with anatomical volumes (a 3D matrix filled with intensity values - a set of voxels).
+The leftmost box indicates a set of functions (MATLAB/external toolboxes, FieldTrip) that deal with anatomical volumes (a 3D matrix filled with intensity values - a set of voxels).
 This step manages the volumetric information (MRI/CT scans) and transforms the anatomy into a processed anatomy ('ana2ana' functions), transforms the anatomy into a binary segmentation ('ana2seg' functions) or manipulates segmented images ('seg2seg' functions, i.e. morphology operators).
 
 The content of the central box is a set of functions which refines the geometrical description derived from the volumetric analysis. Any visual quality control is processed in this section, including interactions with the operator. The input can be a segmented volume, a triangulated set of points or a cloud of points. The output is a geometry (geom), defined as a geometrical description other than volumetric, like for example a triangulated mesh, a cloud of points representing the head, a 3D lattice of tetrahedrons/hexahedrons, etc.
@@ -399,7 +399,7 @@ Method:
 
 FROM Headshape triangulation TO Slab
 
-The user has a closed boundary, e.g. representing the brain, and an estimate of the average cortical thickness. This is the case for example of a boundary calculated in another software and read in Matlab, with points and edges.
+The user has a closed boundary, e.g. representing the brain, and an estimate of the average cortical thickness. This is the case for example of a boundary calculated in another software and read in MATLAB, with points and edges.
 
 Method:
 -With the available points consider if it is necessary to further process the inner skull/brain surface. Avoid the next point if no further processing is necessary.
@@ -532,7 +532,7 @@ FROM MRI TO Single shell (MEG only)
 
 The single shell method is also know as the Nolte method and consists in creating a realistic description of the geometry by fitting a series of spherical harmonics to the points describing the geometry of the outer skull.
 
-- Segment the brain using SPM/Freesurfer
+- Segment the brain using SPM/FreeSurfer
 - Obtain the inner skull compartment by using csf+white+gray
 - smooth and threshold the obtained volume
 - Use one of the known [triangulation methods](#Triangulation methods) to obtain a surface
@@ -602,7 +602,7 @@ The triangulation methods are generally applied to pre-processed volumetric obje
 
 These methods are commonly used in FieldTri
 
-- The marching cubes algorithm implemented by the Matlab function isosurface.m
+- The marching cubes algorithm implemented by the MATLAB function isosurface.m
 - The projection of lines from the center of an icosaedron, to obtain the points of the volume that correspond to the transition between inside and outside of the volume
 - The use of edge detection to determine the points of the volumetric boundaries (see the **edge** function in the Image Processing Toolbox)
 

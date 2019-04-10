@@ -1,7 +1,5 @@
 ---
 title: ft_spike_rate
-layout: default
-tags: 
 ---
 ```
  FT_SPIKE_RATE computes the firing rate of spiketrains and their variance
@@ -38,7 +36,7 @@ tags:
    rate.avg:          nTrials array containing the average firing rate per unit
    rate.var:          nTrials array containing the variance of firing rates per unit
    rate.dof:          nTrials array containing the degree of freedom per unit
-   rate.label:        nUnits cell array containing the labels of the neuronal units%
+   rate.label:        nUnits cell-array containing the labels of the neuronal units%
    rate.time:         Mean latency (this field ensures it is TIMELOCK
                       struct)
 ```

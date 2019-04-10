@@ -1,7 +1,5 @@
 ---
 title: ft_multiplotTFR
-layout: default
-tags: 
 ---
 ```
  FT_MULTIPLOTTFR plots the time-frequency representations of power or coherence
@@ -100,7 +98,7 @@ tags:
  If you specify this option the input data will be read from a *.mat
  file on disk. This mat files should contain only a single variable named 'data',
  corresponding to the input structure. For this particular function, the
- data should be provided as a cell array.
+ data should be provided as a cell-array.
 
  See also:
    FT_MULTIPLOTER, FT_SINGLEPLOTER, FT_SINGLEPLOTTFR, FT_TOPOPLOTER, FT_TOPOPLOTTFR,

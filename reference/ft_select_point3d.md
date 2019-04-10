@@ -1,7 +1,5 @@
 ---
 title: ft_select_point3d
-layout: default
-tags: 
 ---
 ```
  FT_SELECT_POINT3D helper function for selecting one or multiple points on a 3D mesh
@@ -19,7 +17,7 @@ tags:
    'markercolor' = character, for example 'r', 'b' or 'g' (default = 'k')
 
  Example
-   [pos, tri] = icosahedron162;
+   [pos, tri] = mesh_sphere(162);
    bnd.pos = pos;
    bnd.tri = tri;
    ft_plot_mesh(bnd)

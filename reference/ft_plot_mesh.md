@@ -1,7 +1,5 @@
 ---
 title: ft_plot_mesh
-layout: default
-tags: 
 ---
 ```
  FT_PLOT_MESH visualizes a surface or volumetric mesh, for example describing the
@@ -34,7 +32,7 @@ tags:
  If you don't want the faces, edges or vertices to be plotted, you should specify the color as 'none'.
 
  Example
-   [pos, tri] = icosahedron162;
+   [pos, tri] = mesh_sphere(162);
    mesh.pos = pos;
    mesh.tri = tri;
    ft_plot_mesh(mesh, 'facecolor', 'skin', 'edgecolor', 'none')

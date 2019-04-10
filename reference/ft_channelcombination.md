@@ -1,13 +1,11 @@
 ---
 title: ft_channelcombination
-layout: default
-tags: 
 ---
 ```
  FT_CHANNELCOMBINATION creates a cell-array with combinations of EEG/MEG
  channels for subsequent cross-spectral-density and coherence analysis
 
- You should specify channel combinations as a two-column cell array,
+ You should specify channel combinations as a two-column cell-array,
    cfg.channelcmb = {  'EMG' 'MLF31'
                        'EMG' 'MLF32'
                        'EMG' 'MLF33' };
@@ -26,7 +24,7 @@ tags:
  interpretation of each channel-combination is that the direction of the
  interaction is from the first column to the second column.
 
- Note that the default behaviour is to exclude symmetric pairs and
+ Note that the default behavior is to exclude symmetric pairs and
  auto-combinations.
 
  See also FT_CHANNELSELECTION

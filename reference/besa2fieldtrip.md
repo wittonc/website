@@ -1,7 +1,5 @@
 ---
 title: besa2fieldtrip
-layout: default
-tags: 
 ---
 ```
  BESA2FIELDTRIP reads and converts various BESA datafiles into a FieldTrip
@@ -22,7 +20,7 @@ tags:
    *.dat is converted to a structure similar to the output of FT_SOURCANALYSIS
    *.dat combined with a *.gen or *.generic is converted to a structure similar to the output of FT_PREPROCESSING
 
- Note (*): If the BESA toolbox by Karsten Hochstatter is found on your
+ (*) If the BESA toolbox by Karsten Hochstatter is found on your
  MATLAB path, the readBESAxxx functions will be used (where xxx=tfc/swf),
  alternatively the private functions from FieldTrip will be used.
 

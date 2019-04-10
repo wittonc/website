@@ -1,7 +1,5 @@
 ---
 title: ft_spike_isi
-layout: default
-tags: 
 ---
 ```
  FT_SPIKE_ISI computes the interspike interval histogram
@@ -43,5 +41,5 @@ tags:
                           second spike fired was 0.1 s later than the
                           first. Note that jumps within trials or first
                           spikes within trials are given NaNs.
-   isih.label           = 1-by-nUnits cell array with labels
+   isih.label           = 1-by-nUnits cell-array with labels
 ```

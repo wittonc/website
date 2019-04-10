@@ -12,7 +12,7 @@ to replicate the functionality of MNE software in FieldTrip. The same functions 
 
 ##### What is MNE?
 
-MNE is a software package that is developed in the A. A. Martinos Center for Biomedical Imaging and it is used for preprocessing averaging EEG and MEG data and for constructing cortically-constrained minimum-norm estimates. The software is written on C and Matlab, and a Matlab Toolbox related to the software is also provided. The software depends on anatomical MRI processing tools provided by the FreeSurfer software.
+MNE is a software package that is developed in the A. A. Martinos Center for Biomedical Imaging and it is used for preprocessing averaging EEG and MEG data and for constructing cortically-constrained minimum-norm estimates. The software is written on C and MATLAB, and a MATLAB Toolbox related to the software is also provided. The software depends on anatomical MRI processing tools provided by the FreeSurfer software.
 
 ##### What is FreeSurfer?
 
@@ -50,7 +50,7 @@ The last three steps are using the outputs from processing of anatomical and ele
 
 ### 1. Anatomical processing
 
-The first part of anatomical processing of the MRI data is done by the Freesurfer program. MNE is using the output of this program and one of the FS functions to create head shapes with the boundary element method (BEM) and to set up the source space for the forward solution. The next figure shows the filenames (with red) that were created by FS and MNE is using them for input. When MNE is creating the BEM model meshes it is using a function (mri_watershed) from FS. Therefore, the FS has to be set up before running this MNE function.
+The first part of anatomical processing of the MRI data is done by the FreeSurfer program. MNE is using the output of this program and one of the FS functions to create head shapes with the boundary element method (BEM) and to set up the source space for the forward solution. The next figure shows the filenames (with red) that were created by FS and MNE is using them for input. When MNE is creating the BEM model meshes it is using a function (mri_watershed) from FS. Therefore, the FS has to be set up before running this MNE function.
 
 {% include image src="/assets/img/development/project/replicate_functionality_of_mne_software/anatomical_processing_2.png" width="650" %}
 
@@ -88,7 +88,7 @@ First, it is averaging the multiple scanning runs together if they exist (output
 
 Then, a non-parametric non-uniform intensity normalization (N3) corrects for intensity non-uniformities (output: $SUBJECTS_DIR/&lt;subject's name>/mri/**nu**.mgz). Next, talairach transformation is computed (from nu.mgz) using MNI305 atlas, and outputs the transformation into $SUBJECTS_DIR/&lt;subject's name>/mri/transforms/talairach.auto.xfm and **talairach**.xfm.
 
-Then, it performs an intensity normalization (intensity of all voxels are scaled) and gives the output \$SUBJECTS_DIR/&lt;subject's name>/mri/**T1**.mgz. This is the volume that is used by the interactive analysis tool of MNE, mne_analyze where the MRI Viewer is using the T1.mgz volume together with the Freesurfer tkmedit user interface. The tkmedit shows the MRI volume index and the Talairach coordinates. T1.mgz is also used as input for MNE for creating BEM meshes.
+Then, it performs an intensity normalization (intensity of all voxels are scaled) and gives the output \$SUBJECTS_DIR/&lt;subject's name>/mri/**T1**.mgz. This is the volume that is used by the interactive analysis tool of MNE, mne_analyze where the MRI Viewer is using the T1.mgz volume together with the FreeSurfer tkmedit user interface. The tkmedit shows the MRI volume index and the Talairach coordinates. T1.mgz is also used as input for MNE for creating BEM meshes.
 
 Last, the mri_watershed program is running that finds the boundary between the brain and the skull (output: $SUBJECTS_DIR/&lt;subject's name>/mri/brainmask.auto.mgz and $SUBJECTS_DIR/&lt;subject's name>/mri/**brainmask**.mgz).
 
@@ -319,7 +319,7 @@ I could load in only the sub10_inner_skull_surface file (output of mne_watershed
 
 #### Reading in data
 
-FieldTrip is Matlab based processing tool. Therefore, Matlab is needed to run its functions. The preparation before starting FieldTrip is that the downloaded FieldTrip has to be added to the MATLAB path.
+FieldTrip is MATLAB based processing tool. Therefore, MATLAB is needed to run its functions. The preparation before starting FieldTrip is that the downloaded FieldTrip has to be added to the MATLAB path.
 
 Function ft_read_mri can read in MRI data in many formats. Look at [Supported data formats](/faq/dataformat). The .mgz files (freesurfer) format is not listed yet, but the function can read in also that volume.
 
@@ -405,7 +405,7 @@ The following picture show the BEM meshe
 
 #### Preprocessing
 
-For more information in how to read in MEG data into Matlab, how to segment the data and how to do artifact-rejection see the other tutorials.
+For more information in how to read in MEG data into MATLAB, how to segment the data and how to do artifact-rejection see the other tutorials.
 
 :!: One big difference between FT and MNE is that MNE is doing only automatic artifact-rejection.
 
@@ -489,13 +489,13 @@ Plot inverse solution at max (in time):
 
 ### Comparing source spaces
 
-I have read in the source space created on the sample data (subject 10 in Lin's experiment) into Matlab.
+I have read in the source space created on the sample data (subject 10 in Lin's experiment) into MATLAB.
 
 In MNE:
 
     mne_setup_source_space --ico -6
 
-In Matlab:
+In MATLAB:
 
     src = mne_read_source_spaces('/<path>/sub10-oct-6-src.fif');
 

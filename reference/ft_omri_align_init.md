@@ -1,7 +1,5 @@
 ---
 title: ft_omri_align_init
-layout: default
-tags: 
 ---
 ```
  function model = ft_omri_align_init(Vr,flags)
@@ -15,7 +13,7 @@ tags:
          All operations are performed relative to the first image.
          ie. Coregistration is to the first image, and resampling
          of images is into the space of the first image.
-         For multiple sessions, P should be a cell array, where each
+         For multiple sessions, P should be a cell-array, where each
          cell should be a matrix of filenames.
 
  flags - a structure containing various options.  The fields are:

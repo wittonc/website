@@ -1,7 +1,5 @@
 ---
 title: ft_spikedensity
-layout: default
-tags: 
 ---
 ```
  FT_SPIKEDENSITY computes the spike density function of the spike trains by
@@ -38,7 +36,7 @@ tags:
                         For cfg.winfunc = 'gauss': the standard deviation in seconds (default =
                                          1/4 of window duration in seconds)
                         For cfg.winfunc = 'wname' with 'wname' any standard window function
-                                          see window opts in that function and add as cell array
+                                          see window opts in that function and add as cell-array
                         If cfg.winfunctopt = [], default opts are taken.
    cfg.latency        = [begin end] in seconds, 'maxperiod' (default), 'minperiod',
                         'prestim'(t>=0), or 'poststim' (t>=0).

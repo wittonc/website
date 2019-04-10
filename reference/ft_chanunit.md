@@ -1,7 +1,5 @@
 ---
 title: ft_chanunit
-layout: default
-tags: 
 ---
 ```
  FT_CHANUNIT is a helper function that tries to determine the physical
@@ -14,7 +12,7 @@ tags:
    unit = ft_chanunit(hdr, desired)
 
  If the desired unit is not specified as second input argument, this
- function returns a Nchan*1 cell array with a string describing the
+ function returns a Nchan*1 cell-array with a string describing the
  physical units of each channel, or 'unknown' if those cannot be
  determined.
 

@@ -1,7 +1,5 @@
 ---
 title: ft_freqbaseline
-layout: default
-tags: 
 ---
 ```
  FT_FREQBASELINE performs baseline normalization for time-frequency data
@@ -15,7 +13,7 @@ tags:
                       frequency specific baseline windows.
    cfg.baselinetype = 'absolute', 'relative', 'relchange', 'normchange', 'db' or 'zscore' (default = 'absolute')
    cfg.parameter    = field for which to apply baseline normalization, or
-                      cell array of strings to specify multiple fields to normalize
+                      cell-array of strings to specify multiple fields to normalize
                       (default = 'powspctrm')
 
  See also FT_FREQANALYSIS, FT_TIMELOCKBASELINE, FT_FREQCOMPARISON,

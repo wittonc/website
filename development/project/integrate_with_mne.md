@@ -4,14 +4,14 @@ title: Integrate FieldTrip and MNE-Python
 
 {% include /shared/development/warning.md %}
 
-Not all the information contained in either Matlab or Python can be completely copied into the other format.
+Not all the information contained in either MATLAB or Python can be completely copied into the other format.
 
 We cannot assure that the API in MNE-Python will remain the same in the future. Please, report any error on [bugzilla](/bugzilla) and include this address ''bugzilla@gpiantoni.com'' to the CC list in the bugreport.
 
 Code under development, the mne-python community currently works on reader functions for FieldTrip data structure
 [https://github.com/mne-tools/mne-python/pull/5141](https://github.com/mne-tools/mne-python/pull/5141), [https://github.com/mne-tools/mne-python/issues/4833](https://github.com/mne-tools/mne-python/issues/4833)
 
-More functions to work with files coming from MNE-python in Matlab are available at [https://github.com/mne-tools/mne-matlab](https://github.com/mne-tools/mne-matlab).
+More functions to work with files coming from MNE-python in MATLAB are available at [https://github.com/mne-tools/mne-matlab](https://github.com/mne-tools/mne-matlab).
 
 # Integrate FieldTrip and MNE-Python
 
@@ -43,14 +43,14 @@ The aim is to pass the channel=level data between FieldTrip and MNE. Reading is 
 
 ### datatype_raw (one trial) `<->` Raw
 
-For these examples, we'll use the example data of [dataset 10](/faq/what_types_of_datasets_and_their_respective_analyses_are_used_on_fieldtrip#meg-tactile_dipole_fitting). Download [TactileStimulusDipolefit.zip](ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/TactileStimulusDipolefit.zip) and extract the ''.ds'' folder in a convenient location.
+For these examples, we'll use the example data of [dataset 10](/faq/what_types_of_datasets_and_their_respective_analyses_are_used_on_fieldtrip#meg-tactile_dipole_fitting). Download [SubjectBraille.zip](ftp://ftp.fieldtriptoolbox.org/pub/fieldtrip/tutorial/SubjectBraille.zip) and extract the ''.ds'' folder in a convenient location.
 
 #### Export to Raw
 
 First, we read the data, as usua
 
     cfg = [];
-    cfg.dataset = 'MarkusBraille.ds';
+    cfg.dataset = 'SubjectBraille.ds';
     cfg.trialdef.triallength = Inf;
     cfg = ft_definetrial(cfg);
 
@@ -63,7 +63,7 @@ Then, we export them
     fiff_file  = 'ctf_raw.fif';
     fieldtrip2fiff(fiff_file, data)
 
-This function will also attempt to create an event file, called ''ctf_raw-eve.fif''. Because the fiff format is less flexible than the Matlab files, events might be recoded using numbers.
+This function will also attempt to create an event file, called ''ctf_raw-eve.fif''. Because the fiff format is less flexible than the MATLAB files, events might be recoded using numbers.
 
 You can then read the file into Python (MNE-Python 0.8)
 
@@ -136,7 +136,7 @@ If we have the data as ''Raw'' in MNE-Python, we can create epochs, using the ''
     mne.write_events('mne_python-eve.fif', epochs.events)
 ```
 
-And then in Matlab
+And then in MATLAB
 
     fiff_file = 'mne_python-epo.fif';
     events_file = 'mne_python-eve.fif';
@@ -170,7 +170,7 @@ where ''data1'' contains the data organized in multiple trials including conditi
 Create evoked in FieldTrip:
 
     cfg = [];
-    cfg.dataset = 'MarkusBraille.ds';
+    cfg.dataset = 'SubjectBraille.ds';
     cfg.trialdef.eventtype      = 'backpanel trigger';
     cfg.trialdef.prestim        = 1;
     cfg.trialdef.poststim       = 2;
@@ -202,7 +202,7 @@ We just continue using the instance ''epochs'' that was defined [before](#dataty
     evoked.save('mne_python-ave.fif')
 ```
 
-And then in Matlab, we can read the data
+And then in MATLAB, we can read the data
 
     fiff_file = 'mne_python-ave.fif';
     cfg = [];

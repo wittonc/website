@@ -1,7 +1,5 @@
 ---
 title: ft_timelockbaseline
-layout: default
-tags: 
 ---
 ```
  FT_TIMELOCKBASELINE performs baseline correction for ERF and ERP data
@@ -13,7 +11,7 @@ tags:
    cfg.baseline     = [begin end] (default = 'no')
    cfg.channel      = cell-array, see FT_CHANNELSELECTION
    cfg.parameter    = field for which to apply baseline normalization, or
-                      cell array of strings to specify multiple fields to normalize
+                      cell-array of strings to specify multiple fields to normalize
                       (default = 'avg')
  To facilitate data-handling and distributed computing you can use
    cfg.inputfile   =  ...

@@ -1,7 +1,5 @@
 ---
 title: ft_timelockgrandaverage
-layout: default
-tags: 
 ---
 ```
  FT_TIMELOCKGRANDAVERAGE computes ERF/ERP average and variance
@@ -43,7 +41,7 @@ tags:
  file on disk and/or the output data will be written to a *.mat file. These mat
  files should contain only a single variable, corresponding with the
  input/output structure. For this particular function, the input should be
- structured as a cell array.
+ structured as a cell-array.
 
  See also FT_TIMELOCKANALYSIS, FT_TIMELOCKSTATISTICS, FT_TIMELOCKBASELINE
 ```
